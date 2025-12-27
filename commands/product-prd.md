@@ -12,6 +12,17 @@ description: Generate or update Product Requirements Document (PRD) for a produc
 - Generates PRD.md in `./products/{product-name}/prd/`
 - Can be run standalone or as part of `/product-init` pipeline
 
+## Skill Reference
+
+**You MUST follow the guidelines in `~/.claude/skills/product-research/SKILL.md`**
+
+Key requirements from the skill:
+- Use Chrome DevTools MCP for competitor analysis (Elements, Network, Performance, Application panels)
+- Analyze minimum 5 direct competitors and 3 indirect competitors
+- Explain "WHY" features exist, not just "WHAT" they are
+- All claims must have evidence sources
+- Technical analysis must include stack detection, performance metrics, and UX patterns
+
 ## Your Role
 
 You are orchestrating the **Product Manager Agent** to create or update a comprehensive Product Requirements Document. This command provides focused PRD generation outside the full pipeline.
@@ -64,12 +75,16 @@ Context:
 
 Requirements:
 - Follow PRD template from ~/.claude/templates/prd-template.md
-- Conduct market research using WebSearch
-- Analyze minimum 3 competitors
-- Create detailed user personas
+- Follow product-research skill guidelines from ~/.claude/skills/product-research/SKILL.md
+- Use Chrome DevTools MCP for competitor website analysis (MANDATORY)
+- Analyze minimum 5 direct competitors + 3 indirect competitors
+- Explain "WHY" for each feature decision (not just "WHAT")
+- Use WebSearch for market research
+- Create detailed user personas with evidence
 - Define features with priorities (P0-P3)
 - Document user flows with Mermaid diagrams
 - Include success metrics and KPIs
+- All claims must have sources cited
 
 Output: ./products/{product-name}/prd/PRD.md
 ```

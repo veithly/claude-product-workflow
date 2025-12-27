@@ -12,6 +12,18 @@ description: Generate or update development guide (CLAUDE.md) for a product
 - Requires all previous documents to exist
 - Generates CLAUDE.md in `./products/{product-name}/development/`
 
+## Skill Reference
+
+**You MUST follow the guidelines in `~/.claude/skills/dev-documentation/SKILL.md`**
+
+Key requirements from the skill:
+- Quick Start must be < 5 minutes to dev ready
+- All commands must be copy-paste ready and tested
+- Version tracking with dependency chains
+- Auto-sync sections with manual override preservation
+- Code examples must be complete and runnable
+- Include troubleshooting for known issues
+
 ## Your Role
 
 You are orchestrating the **Dev Guide Generator Agent** to create or update a comprehensive development guide. This synthesizes all product documentation into a developer-ready CLAUDE.md file.
@@ -66,11 +78,16 @@ Context:
 
 Requirements:
 - Follow CLAUDE.md template from ~/.claude/templates/claude-md-template.md
-- Create actionable quick start guide
+- Follow dev-documentation skill guidelines from ~/.claude/skills/dev-documentation/SKILL.md
+- Create actionable quick start guide (< 5 minutes)
+- All commands must be tested and copy-paste ready
 - Synthesize project context from PRD
 - Include tech stack from Architecture
-- Import current tasks from TODO
-- Document code standards
+- Import current tasks from TODO with auto-sync markers
+- Document code standards with examples
+- Set up version tracking with dependency chains
+- Preserve manual override sections (<!-- MANUAL --> blocks)
+- Include troubleshooting for common issues
 - Set up auto-sync mechanism
 - Include troubleshooting section
 

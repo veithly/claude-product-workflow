@@ -12,6 +12,26 @@ description: Generate or update UI/UX design specifications for a product
 - Requires PRD to exist (./products/{product-name}/prd/PRD.md)
 - Generates UIUX.md in `./products/{product-name}/uiux/`
 
+## Skill Reference
+
+**You MUST follow the guidelines in `~/.claude/skills/uiux-design/SKILL.md`**
+
+### PROHIBITED PATTERNS (STRICT):
+- ❌ Blue-purple gradients (AI cliche)
+- ❌ System default fonts without customization
+- ❌ Generic template layouts (centered hero + gradient + floating mockup)
+- ❌ Undraw/Humaaans-style flat illustrations
+- ❌ Pure #000000 black or #FFFFFF white without purpose
+- ❌ Single font family for everything
+
+### MANDATORY REQUIREMENTS:
+- ✅ Use enterprise component libraries (shadcn/ui, Radix UI, Chakra UI)
+- ✅ Document color psychology rationale for primary color
+- ✅ Reference proven design systems (Stripe, Linear, Vercel, Airbnb)
+- ✅ Full WCAG 2.1 AA accessibility compliance
+- ✅ Consistent design tokens (spacing, typography, radius)
+- ✅ All components must have state specifications
+
 ## Your Role
 
 You are orchestrating the **UIUX Designer Agent** to create or update comprehensive design specifications. This command focuses specifically on UI/UX documentation.
@@ -76,11 +96,16 @@ Context:
 
 Requirements:
 - Follow UIUX template from ~/.claude/templates/uiux-template.md
-- Reference https://www.designprompts.dev/ for patterns
+- Follow uiux-design skill guidelines from ~/.claude/skills/uiux-design/SKILL.md
+- STRICTLY AVOID all prohibited patterns (gradients, templates, generic fonts)
+- Use enterprise component libraries (shadcn/ui, Radix UI, Chakra UI)
+- Document color psychology rationale for all color choices
+- Reference proven design systems for inspiration (NOT copying)
 - Create page layouts for all PRD features
-- Design complete component library
-- Document all states and interactions
-- Include accessibility specifications (WCAG AA)
+- Design complete component library with all states
+- Document all interactions and micro-animations
+- Include WCAG 2.1 AA accessibility specifications
+- Define all design tokens (spacing, typography, radius, colors)
 - Use Mermaid for flow diagrams
 - Use ASCII art for layout illustrations
 

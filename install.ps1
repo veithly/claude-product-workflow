@@ -16,7 +16,16 @@ if (-not (Test-Path $ClaudeDir)) {
 }
 
 # Create subdirectories if they don't exist
-$Subdirs = @("templates", "agents", "commands", "skills\product-workflow")
+$Subdirs = @(
+    "templates",
+    "agents",
+    "commands",
+    "skills\product-research",
+    "skills\uiux-design",
+    "skills\architecture-design",
+    "skills\project-planning",
+    "skills\dev-documentation"
+)
 foreach ($Subdir in $Subdirs) {
     $FullPath = Join-Path $ClaudeDir $Subdir
     if (-not (Test-Path $FullPath)) {
@@ -47,9 +56,14 @@ Write-Host "Installed files:" -ForegroundColor White
 Write-Host "  - 5 templates in $ClaudeDir\templates\"
 Write-Host "  - 5 agents in $ClaudeDir\agents\"
 Write-Host "  - 7 commands in $ClaudeDir\commands\"
-Write-Host "  - 1 skill in $ClaudeDir\skills\product-workflow\"
+Write-Host "  - 5 skills:"
+Write-Host "    - product-research (Chrome DevTools competitor analysis)"
+Write-Host "    - uiux-design (Anti-template professional design)"
+Write-Host "    - architecture-design (Tech decision matrices)"
+Write-Host "    - project-planning (Task decomposition rules)"
+Write-Host "    - dev-documentation (CLAUDE.md synthesis)"
 Write-Host ""
 Write-Host "Usage:" -ForegroundColor White
 Write-Host "  /product-init my-app 'Description of your product'"
 Write-Host ""
-Write-Host "For more information, see: https://github.com/yourusername/claude-product-workflow"
+Write-Host "For more information, see: https://github.com/veithly/claude-product-workflow"

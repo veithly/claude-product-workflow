@@ -12,6 +12,18 @@ description: Generate or update project plan with task breakdown for a product
 - Requires PRD, UIUX, and Architecture to exist
 - Generates TODO.md in `./products/{product-name}/project/`
 
+## Skill Reference
+
+**You MUST follow the guidelines in `~/.claude/skills/project-planning/SKILL.md`**
+
+Key requirements from the skill:
+- Maximum 16 hours per task (split if larger)
+- Use three-point estimation (Optimistic, Most Likely, Pessimistic)
+- Explicit dependency types (Finish-to-Start, Start-to-Start, etc.)
+- Risk register with probability, impact, and mitigation
+- Priority levels P0-P3 with clear rationale
+- Milestone definitions with measurable success criteria
+
 ## Your Role
 
 You are orchestrating the **Project Manager Agent** to create or update a comprehensive project plan. This includes task breakdown, prioritization, dependency mapping, and milestone definition.
@@ -69,11 +81,15 @@ Context:
 
 Requirements:
 - Follow TODO template from ~/.claude/templates/todo-template.md
+- Follow project-planning skill guidelines from ~/.claude/skills/project-planning/SKILL.md
 - Extract tasks from ALL source documents
 - Break down to 1-2 day granularity (max 16 hours per task)
-- Assign priorities P0-P3
-- Map all dependencies
-- Define milestones with objectives
+- Use three-point estimation for all tasks
+- Assign priorities P0-P3 with rationale
+- Map all dependencies with explicit types
+- Define milestones with measurable success criteria
+- Include comprehensive risk register (probability, impact, mitigation)
+- Identify critical path
 - Include effort estimates
 - Create dependency graph (Mermaid)
 - Include risk register

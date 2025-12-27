@@ -12,6 +12,18 @@ description: Generate or update technical architecture documentation for a produ
 - Requires PRD and UIUX to exist
 - Generates ARCHITECTURE.md in `./products/{product-name}/architecture/`
 
+## Skill Reference
+
+**You MUST follow the guidelines in `~/.claude/skills/architecture-design/SKILL.md`**
+
+Key requirements from the skill:
+- Document ALL technology choices with detailed rationale
+- Include alternatives considered and why they were rejected
+- Use decision criteria matrix (Team Expertise, Ecosystem Maturity, Performance, Hiring Pool, Viability, Integration)
+- Follow architecture patterns (Modular Monolith, Microservices, Serverless) based on team size
+- Include security checklist and performance budgets
+- Create comprehensive API specifications with all states
+
 ## Your Role
 
 You are orchestrating the **Product Architect Agent** to create or update comprehensive technical architecture documentation. This includes technology selection, system design, and implementation roadmap.
@@ -76,11 +88,17 @@ Context:
 
 Requirements:
 - Follow Architecture template from ~/.claude/templates/architecture-template.md
+- Follow architecture-design skill guidelines from ~/.claude/skills/architecture-design/SKILL.md
 - Research current best practices (use WebSearch, Context7)
-- Document all technology choices with rationale
-- Include alternatives considered
+- Use decision criteria matrix for all technology choices
+- Document ALL technology choices with detailed rationale
+- Include alternatives considered and rejection reasons
 - Create system diagrams (Mermaid)
 - Design database schema (ERD)
+- Define API contracts with all request/response formats
+- Complete security checklist
+- Define performance budgets (LCP, FID, CLS, API P95/P99)
+- Plan caching and scaling strategies
 - Define API contracts
 - Plan security architecture
 - Create implementation roadmap

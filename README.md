@@ -1,20 +1,32 @@
 # Claude Product Workflow
 
-> A comprehensive 5-agent product development workflow for Claude Code
+> A comprehensive 5-skill product development workflow for Claude Code
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude-Code-blueviolet)](https://docs.anthropic.com/en/docs/claude-code)
 
-Transform your product ideas into development-ready documentation with AI-powered agents that handle market research, design specifications, technical architecture, project planning, and developer guides.
+Transform your product ideas into development-ready documentation with AI-powered specialized skills that enforce **professional-grade standards** for market research, design specifications, technical architecture, project planning, and developer guides.
+
+## What Makes This Different
+
+This is not just another documentation generator. Each skill enforces **strict professional standards**:
+
+| Skill | Key Differentiators |
+|-------|---------------------|
+| **Product Research** | Uses Chrome DevTools MCP for competitor analysis, requires 5+ direct competitors, enforces "WHY not just WHAT" analysis |
+| **UIUX Design** | **PROHIBITS** AI-template patterns (blue-purple gradients, generic fonts), **REQUIRES** enterprise component libraries |
+| **Architecture Design** | Decision matrices for all tech choices, performance budgets, security checklists |
+| **Project Planning** | Three-point estimation, risk registers, explicit dependency types, 16-hour task limits |
+| **Dev Documentation** | 5-minute quick start, version tracking, auto-sync with manual overrides |
 
 ## Features
 
-- **5 Specialized Agents**: Product Manager, UIUX Designer, Product Architect, Project Manager, Dev Guide Generator
+- **5 Specialized Skills**: Independent, professional-grade guidelines for each phase
+- **Anti-Template Design**: UIUX skill prohibits generic AI-generated patterns
+- **Evidence-Based Research**: Chrome DevTools analysis for competitor insights
 - **Full Pipeline Orchestration**: Single command to generate all documentation
 - **Quality Gates**: User approval points between major phases
 - **Auto-Synchronization**: Documents stay in sync when requirements change
-- **Standardized Templates**: Consistent, version-controlled documentation
-- **Developer-Ready Output**: Actionable guides with task tracking
 
 ## Quick Start
 
@@ -22,7 +34,7 @@ Transform your product ideas into development-ready documentation with AI-powere
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/claude-product-workflow.git
+git clone https://github.com/veithly/claude-product-workflow.git
 
 # Run the install script
 cd claude-product-workflow
@@ -113,42 +125,63 @@ After running `/product-init`, you'll have:
     └── CLAUDE.md           # Developer Guide
 ```
 
-## Agent Responsibilities
+## Skills Overview
 
-### Product Manager Agent
-- Conducts market research using web search
-- Analyzes 3+ competitors
-- Creates user personas
-- Defines features with MoSCoW prioritization
-- Documents user flows with Mermaid diagrams
+### Product Research Skill (`skills/product-research/`)
 
-### UIUX Designer Agent
-- Designs information architecture
-- Creates page layouts and components
-- Specifies interactions and states
-- Ensures WCAG accessibility
-- References [designprompts.dev](https://www.designprompts.dev/) patterns
+**Chrome DevTools-Powered Competitor Analysis**
 
-### Product Architect Agent
-- Selects technology stack with rationale
-- Designs system architecture
-- Creates database schemas and API contracts
-- Plans security measures
-- Uses Context7 for library documentation
+- Uses Chrome DevTools MCP to analyze competitor websites
+- Analyzes Elements, Network, Performance, and Application panels
+- Requires 5+ direct competitors and 3+ indirect competitors
+- Enforces "WHY not just WHAT" feature analysis
+- All claims must have evidence sources
 
-### Project Manager Agent
-- Breaks features into actionable tasks
-- Assigns P0-P3 priorities
-- Maps task dependencies
-- Defines milestones
-- Estimates effort (max 16h per task)
+### UIUX Design Skill (`skills/uiux-design/`)
 
-### Dev Guide Generator Agent
-- Synthesizes all documentation
-- Creates quick start guide (< 5 min setup)
-- Documents code standards
-- Sets up auto-sync mechanism
-- Integrates task list from TODO
+**Anti-Template Professional Design**
+
+PROHIBITED:
+- Blue-purple gradients (AI cliche)
+- System default fonts
+- Template layouts (centered hero + gradient + mockup)
+- Undraw/Humaaans-style illustrations
+
+REQUIRED:
+- Enterprise component libraries (shadcn/ui, Radix UI, Chakra UI)
+- Color psychology rationale
+- Reference proven design systems (Stripe, Linear, Vercel, Airbnb)
+- Full WCAG 2.1 AA accessibility compliance
+
+### Architecture Design Skill (`skills/architecture-design/`)
+
+**Decision-Matrix-Driven Technical Design**
+
+- Technology selection with criteria matrix (Team Expertise, Ecosystem, Performance)
+- Architecture patterns based on team size
+- Complete security checklist
+- Performance budgets (LCP, FID, CLS, API P95/P99)
+- API specification with all states
+
+### Project Planning Skill (`skills/project-planning/`)
+
+**Risk-Aware Task Decomposition**
+
+- Maximum 16 hours per task
+- Three-point estimation (Optimistic, Most Likely, Pessimistic)
+- Explicit dependency types (Finish-to-Start, Start-to-Start, etc.)
+- Risk register with probability, impact, mitigation
+- Milestone definitions with measurable success criteria
+
+### Dev Documentation Skill (`skills/dev-documentation/`)
+
+**Developer-Ready CLAUDE.md**
+
+- Quick start < 5 minutes to dev ready
+- All commands copy-paste ready
+- Version tracking with dependency chains
+- Auto-sync sections with manual override preservation
+- Troubleshooting for common issues
 
 ## Workflow Diagram
 
@@ -165,35 +198,35 @@ After running `/product-init`, you'll have:
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  Phase 2: PRD Generation                                    │
-│  └── Market research + Feature definition                   │
+│  Phase 2: PRD Generation (product-research skill)           │
+│  └── Chrome DevTools analysis + 5+ competitors              │
 │  🛑 USER APPROVAL REQUIRED                                  │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  Phase 3: UIUX Design                                       │
-│  └── Pages, components, interactions                        │
+│  Phase 3: UIUX Design (uiux-design skill)                   │
+│  └── Anti-template design + enterprise components           │
 │  🛑 USER APPROVAL REQUIRED                                  │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  Phase 4: Architecture                                      │
-│  └── Tech stack, system design, APIs                        │
+│  Phase 4: Architecture (architecture-design skill)          │
+│  └── Decision matrices + performance budgets                │
 │  🛑 USER APPROVAL REQUIRED                                  │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  Phase 5: Project Planning                                  │
-│  └── Tasks, priorities, dependencies                        │
+│  Phase 5: Project Planning (project-planning skill)         │
+│  └── Three-point estimation + risk register                 │
 │  🛑 USER APPROVAL REQUIRED                                  │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  Phase 6: Dev Guide                                         │
+│  Phase 6: Dev Guide (dev-documentation skill)               │
 │  └── CLAUDE.md with auto-sync                               │
 │  ✅ COMPLETE                                                │
 └─────────────────────────────────────────────────────────────┘
@@ -217,22 +250,29 @@ PRD changes
 
 Run `/product-sync my-app` to cascade updates, or use `--dry-run` to preview changes.
 
-## Templates
+## Directory Structure
 
-All documents use standardized templates located in `~/.claude/templates/`:
-
-| Template | Description |
-|----------|-------------|
-| `prd-template.md` | Product Requirements with YAML frontmatter |
-| `uiux-template.md` | Design specs with component library |
-| `architecture-template.md` | Tech architecture with decision records |
-| `todo-template.md` | Task list with dependency graph |
-| `claude-md-template.md` | Developer guide with auto-sync |
+```
+claude-product-workflow/
+├── skills/                     # Independent skill guidelines
+│   ├── product-research/       # Chrome DevTools competitor analysis
+│   ├── uiux-design/            # Anti-template design standards
+│   ├── architecture-design/    # Tech decision matrices
+│   ├── project-planning/       # Task decomposition rules
+│   └── dev-documentation/      # CLAUDE.md synthesis
+├── templates/                  # Document templates
+├── agents/                     # Agent definitions
+├── commands/                   # Command definitions
+├── install.sh                  # macOS/Linux installer
+├── install.ps1                 # Windows installer
+└── README.md
+```
 
 ## Requirements
 
 - Claude Code CLI installed
 - Internet access (for market research)
+- **Required**: Chrome DevTools MCP (for competitor analysis)
 - Optional: Context7 MCP for library docs
 - Optional: Serena MCP for codebase analysis
 
@@ -254,6 +294,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [Design Prompts](https://www.designprompts.dev/) for UI/UX best practices
 - [Mermaid](https://mermaid.js.org/) for diagram syntax
+- [shadcn/ui](https://ui.shadcn.com/) for component library reference
 - Claude Code team for the extension platform
 
 ---
