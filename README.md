@@ -91,6 +91,47 @@ Run specific phases independently:
 /product-plan my-app             # Generate TODO (requires all prior)
 /product-dev my-app              # Generate dev guide (requires all)
 /product-sync my-app             # Sync all documents
+/product-change my-app "desc"    # Intelligent feature updates
+```
+
+### Feature Change Management
+
+When you need to add, modify, or remove features:
+
+```bash
+# Add a new feature
+/product-change my-app "Add dark mode toggle to user settings"
+
+# Modify an existing feature
+/product-change my-app "Change auth from email/password to OAuth"
+
+# Remove a feature
+/product-change my-app "Remove legacy export, use new API instead"
+
+# Preview changes without applying
+/product-change my-app "Add notifications" --dry-run
+
+# Update docs AND implement code
+/product-change my-app "Add search functionality" --implement
+```
+
+This command:
+- Analyzes impact across all documents (PRD → UIUX → Architecture → TODO → CLAUDE.md)
+- Classifies changes (Feature Add/Modify/Remove, UX Change, Tech Change, Priority Change, Scope Change)
+- Generates update schedule with dependency awareness
+- Provides user approval gates before execution
+- Optionally implements code changes with `--implement` flag
+
+### Document Synchronization
+
+Sync documents with smart change detection:
+
+```bash
+/product-sync my-app             # Sync all documents
+/product-sync my-app --verify    # Check consistency (report only)
+/product-sync my-app --auto-fix  # Auto-resolve minor issues
+/product-sync my-app --dry-run   # Preview what would change
+/product-sync my-app --force     # Regenerate all regardless of version
 ```
 
 ### Update Mode

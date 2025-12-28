@@ -55,7 +55,7 @@ Write-Host ""
 Write-Host "Installed files:" -ForegroundColor White
 Write-Host "  - 5 templates in $ClaudeDir\templates\"
 Write-Host "  - 5 agents in $ClaudeDir\agents\"
-Write-Host "  - 7 commands in $ClaudeDir\commands\"
+Write-Host "  - 8 commands in $ClaudeDir\commands\"
 Write-Host "  - 5 skills:"
 Write-Host "    - product-research (Chrome DevTools competitor analysis)"
 Write-Host "    - uiux-design (Anti-template professional design)"
